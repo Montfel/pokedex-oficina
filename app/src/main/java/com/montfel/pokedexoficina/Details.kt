@@ -29,7 +29,10 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 
 @Composable
-fun Details(pokemonId: String) {
+fun Details(
+    pokemonId: String,
+    dominantColor: Color,
+) {
     val viewModel = viewModel<DetailsViewModel>()
     val uiState by viewModel.uiState.collectAsState()
 
@@ -42,7 +45,7 @@ fun Details(pokemonId: String) {
         modifier = Modifier.fillMaxWidth()
     ) {
         Card(
-            backgroundColor = Color.LightGray,
+            backgroundColor = dominantColor,
             modifier = Modifier
                 .padding(16.dp)
                 .size(300.dp)
